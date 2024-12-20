@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>BCM Auto - Auto Premium</title>
+    <script type="module">
+      import './src/style.css';
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="text-2xl font-bold text-gray-800">BCM Auto</div>
+          <a href="/admin.html" class="text-gray-600 hover:text-gray-800">
+            <i class="fas fa-user-shield"></i> Amministratore
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <!-- Search, filter toggle, and sort controls -->
+      <div class="mb-6 space-y-4">
+        <div class="flex gap-4">
+          <div class="relative flex-1">
+            <input type="text" 
+                   id="searchInput" 
+                   placeholder="Cerca auto..." 
+                   class="w-full p-3 pl-10 bg-white rounded-lg shadow-sm border focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <button id="filterToggle" 
+                  class="px-4 py-2 bg-white rounded-lg shadow-sm border hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <i class="fas fa-filter"></i> Filtri
+          </button>
+        </div>
+
+        <!-- Sort controls -->
+        <div class="flex items-center gap-4 bg-white p-3 rounded-lg shadow-sm">
+          <span class="text-gray-600">Ordina per:</span>
+          <select id="sortField" class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">Predefinito</option>
+            <option value="price">Prezzo</option>
+            <option value="year">Anno</option>
+            <option value="mileage">Chilometraggio</option>
+          </select>
+          <select id="sortDirection" class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="asc">Crescente</option>
+            <option value="desc">Decrescente</option>
+          </select>
+        </div>
+
+        <!-- Filter panel (hidden by default) -->
+        <div id="filterPanel" class="hidden bg-white rounded-lg shadow-sm p-6 space-y-6 transition-all duration-300">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Make and Model -->
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-700 mb-2">Marca</label>
+                <input type="text" id="makeFilter" placeholder="es., BMW" 
+                       class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2">Modello</label>
+                <input type="text" id="modelFilter" placeholder="es., M3" 
+                       class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+            </div>
+
+            <!-- Year Range -->
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-700 mb-2">Intervallo Anno</label>
+                <div class="flex gap-2">
+                  <input type="number" id="minYear" placeholder="Min" 
+                         class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <input type="number" id="maxYear" placeholder="Max" 
+                         class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+              </div>
+              <!-- Price Range -->
+              <div>
+                <label class="block text-gray-700 mb-2">Intervallo Prezzo</label>
+                <div class="flex gap-2">
+                  <input type="number" id="minPrice" placeholder="Min" 
+                         class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <input type="number" id="maxPrice" placeholder="Max" 
+                         class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+              </div>
+            </div>
+
+            <!-- Transmission and Fuel Type -->
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-700 mb-2">Trasmissione</label>
+                <select id="transmissionFilter" 
+                        class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="">Tutti</option>
+                  <option value="automatic">Automatica</option>
+                  <option value="manual">Manuale</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2">Tipo Carburante</label>
+                <select id="fuelTypeFilter" 
+                        class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="">Tutti</option>
+                  <option value="petrol">Benzina</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="electric">Elettrica</option>
+                  <option value="hybrid">Ibrida</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Actions -->
+          <div class="flex justify-end gap-4 pt-4 border-t">
+            <button id="resetFilters" 
+                    class="px-4 py-2 text-gray-600 hover:text-gray-800 focus:outline-none">
+              Reimposta Filtri
+            </button>
+            <button id="applyFilters" 
+                    class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Applica Filtri
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="carList">
+        <!-- Loading state placeholders -->
+        <template id="loadingCardTemplate">
+          <div class="car-card bg-white rounded-lg shadow-md overflow-hidden loading-card">
+            <div class="loading-image"></div>
+            <div class="p-4 space-y-4">
+              <div class="loading-text w-3/4"></div>
+              <div class="loading-text w-1/2"></div>
+              <div class="loading-price mt-2"></div>
+            </div>
+          </div>
+        </template>
+        <!-- Car cards will be dynamically inserted here -->
+      </div>
+
+      <!-- Pagination Controls -->
+      <div id="pagination" class="flex justify-center space-x-2 mt-8">
+        <!-- Pagination buttons will be dynamically inserted here -->
+      </div>
+    </main>
+
+    <!-- Car Details Modal -->
+    <div id="carDetailsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-bold" id="carDetailsTitle"></h3>
+          <button onclick="closeCarDetailsModal()" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div id="carDetailsContent" class="space-y-6">
+          <!-- Car details will be dynamically inserted here -->
+        </div>
+        <div class="mt-6 flex justify-end space-x-4">
+          <button onclick="closeCarDetailsModal()" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            Chiudi
+          </button>
+          <button onclick="openContactModalFromDetails()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            Contatta per Quest'Auto
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-8 max-w-md w-full">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold">Contattaci</h3>
+          <button onclick="closeContactModal()" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form id="contactForm" class="space-y-4">
+          <input type="hidden" id="carId">
+          <div>
+            <label class="block text-gray-700 mb-2">Email</label>
+            <input type="email" id="email" class="w-full p-2 border rounded">
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Telefono</label>
+            <input type="tel" id="phone" class="w-full p-2 border rounded">
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Nota</label>
+            <textarea id="note" class="w-full p-2 border rounded" rows="3"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            Invia
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeClient } from './src/client';
+      initializeClient();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCM Auto - Auto di Lusso Usate</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module">
+        import './src/style.css';
+      </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600">BCM Auto</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/inventory.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">Inventario</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
+            <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-full lg:w-6/12 px-4 text-center">
+                <div>
+                    <h1 class="text-white font-semibold text-5xl">
+                        La Tua Auto dei Sogni, Reinventata
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-300">
+                        Scopri veicoli di seconda mano premium che combinano qualità, prestazioni e valore. Ogni auto racconta una storia, e noi ti aiutiamo a trovare la tua.
+                    </p>
+                    <a href="/inventory.html" class="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Esplora il Nostro Inventario
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Features Section -->
+    <section id="features" class="pb-20 bg-gray-100 -mt-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+                    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                        <div class="px-4 py-5 flex-auto">
+                            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h6 class="text-xl font-semibold">Qualità Garantita</h6>
+                            <p class="mt-2 mb-4 text-gray-600">
+                                Processo di ispezione e certificazione rigoroso per ogni veicolo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-4/12 px-4 text-center">
+                    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                        <div class="px-4 py-5 flex-auto">
+                            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <h6 class="text-xl font-semibold">Prezzi Competitivi</h6>
+                            <p class="mt-2 mb-4 text-gray-600">
+                                Migliori tariffe di mercato con prezzi trasparenti e senza trattative.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+                    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                        <div class="px-4 py-5 flex-auto">
+                            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h6 class="text-xl font-semibold">Protezione Garanzia</h6>
+                            <p class="mt-2 mb-4 text-gray-600">
+                                Opzioni di garanzia complete per la tua tranquillità.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section id="inventory" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Veicoli in Evidenza</h2>
+            <div class="flex flex-wrap -mx-4">
+                <!-- Car Card 1: Porsche 911 -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4868c44cec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Porsche 911" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Porsche 911 Carrera</h3>
+                            <p class="text-gray-600 mb-4">Certificata | Chilometraggio Basso</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€89.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 2: Tesla Model S -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1617654112368-0fc4d4101f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Tesla Model S" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Tesla Model S</h3>
+                            <p class="text-gray-600 mb-4">Elettrica | Alte Prestazioni</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€69.500</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 3: BMW M3 -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1626668013755-6f7c540f7961?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="BMW M3" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">BMW M3</h3>
+                            <p class="text-gray-600 mb-4">Berlina Sportiva | Certificata</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€75.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 4: Ferrari F8 -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1616422285623-c4027462b3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ferrari F8" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Ferrari F8</h3>
+                            <p class="text-gray-600 mb-4">Supercar | Edizione Limitata</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€299.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 5: Lamborghini Huracan -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1519830170195-3f1c2e2e11a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Lamborghini Huracan" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Lamborghini Huracan</h3>
+                            <p class="text-gray-600 mb-4">Supercar | Prestazioni Estreme</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€249.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 6: Mercedes AMG GT -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1555652736-775abe0c9b58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Mercedes AMG GT" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Mercedes AMG GT</h3>
+                            <p class="text-gray-600 mb-4">Sportiva | Lusso Tedesco</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€159.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 7: Bentley Continental GT -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1611656825133-bfec83d3c4a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Bentley Continental GT" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Bentley Continental GT</h3>
+                            <p class="text-gray-600 mb-4">Gran Turismo | Lusso Britannico</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€219.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 8: Rolls-Royce Wraith -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b858fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Rolls-Royce Wraith" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Rolls-Royce Wraith</h3>
+                            <p class="text-gray-600 mb-4">Lusso Supremo | Esclusiva</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€349.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Car Card 9: Maserati MC20 -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1617654112368-0fc4d4101f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Maserati MC20" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Maserati MC20</h3>
+                            <p class="text-gray-600 mb-4">Supercar | Innovazione Italiana</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">€229.995</span>
+                                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="relative py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="items-center flex flex-wrap">
+                <div class="w-full md:w-6/12 ml-auto mr-auto px-4">
+                    <div class="md:pr-12">
+                        <h3 class="text-3xl font-semibold">Trova la Tua Auto Perfetta</h3>
+                        <p class="mt-4 text-lg leading-relaxed text-gray-200">
+                            Il nostro team di esperti è pronto ad aiutarti a trovare il veicolo di seconda mano perfetto che si adatta al tuo stile, budget e alle tue esigenze di prestazioni.
+                        </p>
+                        <ul class="list-none mt-6">
+                            <li class="py-2">
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 mr-3">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gray-200">Ampia Selezione di Veicoli Premium</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 mr-3">
+                                            <i class="fas fa-handshake"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gray-200">Processo Trasparente e Senza Problemi</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 mr-3">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gray-200">Garanzie Complete sui Veicoli</h4>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full md:w-6/12 ml-auto mr-auto px-4">
+                    <img alt="BCM Auto Showroom" class="max-w-full rounded-lg shadow-xl" src="https://images.unsplash.com/photo-1503376780353-7db4a7e7c4a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-gray-300 pt-8 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap text-center lg:text-left">
+                <div class="w-full lg:w-6/12 px-4">
+                    <h4 class="text-3xl font-semibold">BCM Auto</h4>
+                    <h5 class="text-lg mt-0 mb-2 text-gray-700">
+                        Auto Usate Premium, Servizio Eccezionale
+                    </h5>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="flex flex-wrap items-top mb-6">
+                        <div class="w-full lg:w-4/12 px-4 ml-auto">
+                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Link Veloci</span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="/inventory.html">Inventario</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#features">Caratteristiche</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-400" />
+            <div class="flex flex-wrap items-center md:justify-between justify-center">
+                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+                    <div class="text-sm text-gray-600 font-semibold py-1">
+                        Copyright © 2023 BCM Auto
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
